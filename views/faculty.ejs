@@ -1,0 +1,83 @@
+<%- include('common-faculty-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-faculty-profile').addClass('active-link');
+        $('.link-faculty-profile').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+
+<div id="faculty-profile-accountinfo" class="box-1">
+    <h3>Account information</h3>
+    <div>Your Username ID</div>
+    
+    <div>
+    <input type="text" class="faculty-textbox" value='<%= faculty_details.facultyid %>' readonly>
+    </div>
+    
+    <div><button id="changepass" class="profile-changep">Change Password</button><span
+        class="password-cancel-panel">Change Password<button class="password-cancel">Cancel</button></span>
+        <div id="password-area">
+         <form id="passwordfrm" method="POST">
+            <div><input type="password" class="profile-ptextbox" placeholder="Type Current Password"
+                    id="txtcurrentpass" required autocomplete="off"><span class="error-currpass">incorrect
+                    old Password</span></div>
+            <div><input type="password" class="profile-ptextbox" placeholder="Type New Password"
+                    id="txtnewpass" required autocomplete="off"></div>
+            <div><input type="password" class="profile-ptextbox" placeholder="Retype New Password"
+                    id="txtconfirmnewpass" required autocomplete="off"><span class="error-pass">New Password
+                    do not match</span></div>
+            <div><input type="submit" value="CHANGE PASSWORD" class="changepassbtn"></div>
+
+          </form>
+        </div>
+    </div>
+</div>
+
+<div id="faculty-teching-subdiv" class="box-1">
+    <h3>Your teaching Subjects</h3>
+
+    <div><h4 style="color: green;"><%if(faculty_details.gender=="male"){%> Mr.<%}else{%> Ms.<%}%><%= faculty_details.faculty_name %> You have to take over this Subjects </h4></div>
+
+    <table id="faculty-teachsub-table" >
+        <thead>
+            <th>Subject Name</th>
+            <th>Subject Code</th>
+            <th>Batch</th>
+            <th>Course</th>
+            <th>Semester</th>
+        </thead>
+        <tbody>
+            <% if(teachsub.length > 0) {%>
+    
+                <% teachsub.forEach(function(row){ %>
+                    <tr>
+                        <td><%= row.subject_name %></td> 
+                        <td><%= row.subject_code %></td>
+                        <td><%= row.batch_year %></td>
+                        <td><%= row.course %></td>
+                        <td><%= row.semester %></td>
+                        
+                    </tr>
+                <% }) %>
+    
+    
+    
+            <%}else{%>
+                
+                <tr>
+                    <td colspan="5" align="center">Sorry,yet there is no Subjects for You!</td>
+                </tr>
+                
+            <%}%>    
+        </tbody>
+    </table>
+    
+
+</div>
+
+
+
+<%- include('common-faculty-footer') %>

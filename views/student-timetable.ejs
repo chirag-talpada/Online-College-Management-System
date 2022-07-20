@@ -1,0 +1,42 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-timetable').addClass('active-link');
+        $('.link-student-timetable').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-timetablediv" class="box-1">
+    <h3>Timetable information</h3>
+    <table id="student-subject-table">
+        <tr>
+            <td>Semester :</td>
+            <td>
+                <input type="hidden" id="student-timetable-course" value="<%= student.course %>">
+                <input type="hidden" id="student-timetable-batch" value="<%= student.batch_year %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="student-timetable-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            <td><button id="student-timetable-dispbtn">display</button></td>
+        </tr>
+        <tr><td><span class="student-timetable-error"></span></td></tr>
+    </table>
+
+
+    <div id="student-timetable-displaydatatable">
+        
+    </div>
+    
+
+</div>
+
+
+
+<%- include('common-student-footer') %>

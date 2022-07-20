@@ -1,0 +1,50 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-exam_marks').addClass('active-link');
+        $('.link-student-exam_marks').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-subjectdiv" class="box-1">
+    <h3>Exam Marks</h3>
+    <table id="student-exam-table" >
+        <tr>
+            <td>Semester :</td>
+            <td>Subject Code :</td>
+            <td>Subject Name</td>
+            <td>
+                <input type="hidden" id="student-exam-course" value="<%= student.course %>">
+                <input type="hidden" id="student-exam-batch" value="<%= student.batch_year %>">
+                <input type="hidden" id="student-exam-stdid" value="<%= student.stdid %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="student-exam-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            <td>
+                <select id="student-exam-subjectddl">
+                    <option value=" " selected disabled>select Subject Code</option>
+                </select>    
+            </td>
+            <td><input type="text" id="student-exam-sname" readonly required ></td>
+        </tr>
+        <tr>
+            <td><button id="student-exam-dispbtn">display</button></td>
+            <td><span class="student-exam-error"></span></td>
+        </tr> 
+    </table>
+
+</div>
+
+<div id="student-exam-resultarea"></div>
+
+
+
+
+<%- include('common-student-footer') %>

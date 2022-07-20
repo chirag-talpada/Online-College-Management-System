@@ -1,0 +1,59 @@
+#student-exam-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    
+}
+
+#student-exam-subjectddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    
+}
+
+#student-exam-dispbtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.student-exam-error{
+    color: red;
+    display: none;
+}
+
+#student-exam-sname{
+  
+    padding: 9px 14px;
+    font-size: 15px;
+    background-color: rgb(199, 199, 199);
+    width:230px;
+}
+
+#student-exam-table{
+    margin-top: 25px;
+    width: 900px;
+    height: 140px;
+    
+}
+
+#student-examtable{
+    margin-left: 25px;
+    width: 300px;
+    height: 100px;
+}
+
+#student-examtable tr td:nth-child(2){
+    font-weight: bold;
+}

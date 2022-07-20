@@ -1,0 +1,179 @@
+<%- include('common-faculty-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-faculty-assignment').addClass('active-link');
+        $('.link-faculty-assignment').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div class="faculty-assignment-div">
+    <div id="faculty-assignment-addpanel">
+    <h3>Assignment Panel</h3>
+  <form id="faculty-assignment-savefrm" method="POST">
+    <table id="faculty-assignment-table">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-assignment-academicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            
+            <td>
+                <select id="faculty-assignment-courseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="faculty-assignment-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Subject Code :</td>
+            <td>Subject Name :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-assignment-scodeddl">
+                    <option value=" " selected disabled>Select Subject Code</option>
+                </select>
+            </td>
+            <td><input type="text" id="faculty-assignment-txtsname" class="faculty-textbox" placeholder="Subject Name" required readonly autocomplete="off"></td>
+            <td><input type="hidden" id="faculty-assignment-fid" value="<%= fid %>"></td>
+        </tr>
+        <tr><td colspan="3">Assignment Details :</td></tr>
+        <tr><td colspan="3"><textarea name="assignmenttxt"   placeholder="Assignment details..." id="faculty_assignment_txtdetails" rows="6" cols="81" required autocomplete="off" ></textarea></td></tr>
+        <tr><td colspan="2" ><input type="submit" value="SAVE" id="faculty-assignment-savebtn"></td>
+        <td><span class="faculty-assignment-error"></span></td>
+        </tr>    
+    </table>
+  </form>
+</div>
+
+<div id="faculty-assignment-editpanel">
+    <h3>Update Assignment <button class="assignment-updatecancel">Cancel</button> </h3>
+  <form id="faculty-assignment-updatefrm" method="POST">
+    <table id="faculty-assignment-table" class="correct">
+        
+        <tr><td >Assignment Details :</td></tr>
+        <tr><td><br><textarea style="resize: none;" placeholder="Assignment details..." style="margin-left: 0px;" id="faculty_assignment_edittxtdetails" name="assignmenttxtedit" rows="6" cols="81" required autocomplete="off" ></textarea></td></tr>
+        <tr><td  ><input type="submit" value="UPDATE" id="faculty-assignment-savebtn">
+        <input type="hidden" id="admin-assignment-editidtxt">
+        </td>
+        </tr>    
+    </table>
+  </form>
+</div>
+
+
+</div>
+
+<div id="faculty-teching-subdiv">
+    <h3>Manage Assignment</h3>
+
+    <table id="faculty-assignment-table">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-assignment-displayacademicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td>
+                <select id="faculty-assignment-displaycourseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="faculty-assignment-displaysemesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>
+            </td>
+            
+            <td><input type="submit" value="display data" id="faculty-assignment-displaybtn"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span class="faculty-assignment-displayddlerror"></span></td>
+        </tr>
+    </table>
+
+
+    <table id="subjectassign-displaydatatable">
+        <thead>
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th >Assignment Details</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="5">Data Not found</td></tr>
+        </tbody>
+    </table>
+    
+
+</div>
+
+<script>
+    CKEDITOR.replace('assignmenttxt');
+</script>
+<script>
+    CKEDITOR.replace('assignmenttxtedit');
+</script>
+
+
+
+<%- include('common-faculty-footer') %>

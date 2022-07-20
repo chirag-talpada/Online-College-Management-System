@@ -1,0 +1,167 @@
+#subject-assign-academicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#subject-assign-courseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#subject-assign-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#assign-subject-txtfname{
+    margin-bottom: 15px;
+    margin-left: 0px;
+    background-color: lightgray;
+}
+
+#assign-subject-txtsname{
+    margin-bottom: 15px;
+    margin-left: 0px;
+    background-color: lightgray;
+}
+
+#subject-assign-scodeddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#subject-assign-facultyddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#subjectassign-savebtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.admin-assignsuberror{
+    color: red;
+    display: none;
+}
+
+#subjectassign-displayacademicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#subjectassign-displaycourseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#subjectassign-displaysemesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#subjectassign-displaybtn{
+    padding: 10px 62px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.subjectassign-displayddlerror{
+    color: red;
+    display: none;
+}
+
+#subjectassign-displaydatatable{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+#subjectassign-displaydatatable thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#subjectassign-displaydatatable th,
+#subjectassign-displaydatatable td{
+    padding: 12px 15px;
+}
+
+
+#subjectassign-displaydatatable tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#subjectassign-displaydatatable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#subjectassign-displaydatatable tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+.subjectassign-deletebtn{
+    color: white;
+    background-color: rgb(253, 49, 49);
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+}
+
+.subjectassign-deletebtn:hover{
+    background-color: red;
+}

@@ -1,0 +1,92 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-course').addClass('active-link');
+        $('.link-course').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="course-creatediv" class="box-1">
+    <div id="course-savepanel">
+    <h3>Add Course</h3>
+    <form method="POST" id="course-savefrm">
+        <div>Course Name</div>
+        <div><input type="text" id="course-txtcourse" class="batch-year-textbox" placeholder="Enter Course Name" required autocomplete="off">
+        <span class="course-errorname">Already Course Name Exist</span>
+        </div>
+        <div>Course Year</div>
+        <div><input type="text" id="course-txtyear" class="batch-year-textbox" placeholder="Enter Course Year" required autocomplete="off" >
+        <span class="course-erroryear">Invalid Year</span>
+        </div>
+        <div>Semesters</div>
+        <div><input type="text" id="course-txtsemester" class="batch-year-textbox" placeholder="No. Of Semesters" readonly required autocomplete="off" >
+        </div>
+        <div><input type="submit" value="SAVE" id="course-savebtn"></div>
+    </form>
+    </div>
+
+    <div id="course-editpanel" >
+        <h3>Update Course information <button class="course-updatecancel">Cancel</button></h3>
+        <form method="POST" id="course-editfrm">
+            <div>Course Name</div>
+            <div><input type="text" id="course-edittxtcourse" class="batch-year-textbox" placeholder="Enter Course Name" required autocomplete="off">
+            <span class="course-editerrorname">Already Course Name Exist</span>
+            </div>
+            <div>Course Year</div>
+            <div><input type="text" id="course-edittxtyear" class="batch-year-textbox" placeholder="Enter Course Year" required autocomplete="off" >
+            <span class="course-editerroryear">Invalid Year</span>
+            </div>
+            <div>Semesters</div>
+            <div><input type="text" id="course-edittxtsemester" class="batch-year-textbox" placeholder="No. Of Semesters" readonly required autocomplete="off" >
+            <input type="hidden" id="course-updatecourseid">
+            </div>
+            <div><input type="submit" value="UPDATE" id="course-updatebtn"></div>
+        </form>
+        </div>
+
+</div>
+
+<div id="course-informationdiv" class="box-1">
+<h3>Course information</h3>
+<table id="course-table" >
+    <thead>
+        <th>Course Name</th>
+        <th>No. Of Year</th>
+        <th>No. Of Semester</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <% if(course.length > 0) {%>
+
+            <% course.forEach(function(row){ %>
+                <tr>
+                    <td><%= row.course_name %></td>
+                    <td><%= row.year %></td>
+                    <td><%= row.semester %></td>
+                    <td>
+                        <!-- <button class="course-editbtn" data-editid="<%= row._id %>" >edit</button> -->
+                        <button class="course-deletebtn" data-id="<%= row._id %>">delete</button>
+                    </td>
+                </tr>
+            <% }) %>
+
+
+
+        <%}else{%>
+            
+            <tr>
+                <td colspan="4" align="center">Records Not Found</td>
+            </tr>
+            
+        <%}%>    
+    </tbody>
+</table>
+
+</div>
+
+
+
+
+<%- include('commonfooter') %>

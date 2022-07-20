@@ -1,0 +1,176 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-subject').addClass('active-link');
+        $('.link-subject').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="subject-adddiv">
+
+<div id="subject-savepanel" class="box-1">
+<h3>Add Subject</h3>
+<form method="POST" id="subject-addfrm">
+    <table class="subject-formtable">
+        <tr>
+            <td>Subject Code :</td>
+            <td>Subject Name :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="text" id="subject-txtsubjectcode" class="batch-year-textbox" placeholder="Enter Subject Code" required autocomplete="off"></td>
+            <td><input type="text" id="subject-txtsubjectname" class="batch-year-textbox" placeholder="Enter Subject Name" required autocomplete="off"></td>
+            <td><span class="subject-nameerror"></span></td>
+        </tr>
+        <tr>
+            <td>Course :</td>
+            <td>Semester :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="subject-courseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="subject-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>Academic Year :</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>    
+        <tr>
+            <td>
+                <select id="subject-academicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td><span class="subject-ddlerror"></span></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr><td colspan="3" ><input type="submit" value="save" id="subject-savebtn"></td></tr>    
+    </table>
+</form>
+</div>
+
+<div id="subject-editpanel" >
+    <h3>Update Subject<button class="subject-updatecancel">Cancel</button></h3>
+    <form method="POST" id="subject-updatefrm">
+        <table class="subject-formtable">
+            <tr>
+                <td>Subject Code :</td>
+                <td>Subject Name :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="subject-edittxtsubjectcode" class="batch-year-textbox" placeholder="Enter Subject Code" required autocomplete="off"></td>
+                <td><input type="text" id="subject-edittxtsubjectname" class="batch-year-textbox" placeholder="Enter Subject Name" required autocomplete="off"></td>
+                <td><input type="hidden" id="subject-editid"><input type="hidden" id="subject-editcourse"><input type="hidden" id="subject-editsemester"><input type="hidden" id="subject-editbatch"><span class="subject-editnameerror"></span></td>
+            </tr>
+            <tr><td colspan="3" ><input type="submit" value="UPDATE" id="subject-updatebtn"></td></tr>    
+        </table>
+    </form>
+</div>
+
+</div>
+
+<div id="subject-informationdiv">
+
+<h3>Subject information</h3>
+
+    <table class="subject-formtable">
+        <tr>
+            <td>Course :</td>
+            <td>Semester :</td>
+            <td>Academic Year :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="subject-displaycourseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="subject-displaysemesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>
+            </td>
+            <td>
+                <select id="subject-displayacademicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td><input type="submit" value="display data" id="subject-displaybtn"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span class="subject-displayddlerror"></span></td>
+        </tr>
+    </table>
+
+
+
+
+
+<table id="subject-displaydatatable">
+    <thead>
+        <tr>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="3">Data Not found</td></tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+<%- include('commonfooter') %>

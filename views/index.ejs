@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Management System</title>
+
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/login.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="icon"
+      type="image/jpeg"
+      href="/images/cf181f98971185.Y3JvcCw0NzEsMzY5LDM3MSwzNg.jpg"
+    />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <div id="lgphoto">
+        <img src="/images/jess-bailey-FHCVK6Vyvwc-unsplash.jpg" />
+      </div>
+      <div id="lgarea">
+        <div class="row-logo">
+          <img src="/images/cf181f98971185.Y3JvcCw0NzEsMzY5LDM3MSwzNg.jpg" />
+        </div>
+        <div id="row-font">Sign into your account</div>
+        <form method="POST" id="lgfrm">
+          <div class="row-txt">
+            <input
+              type="text"
+              class="txtlg"
+              id="txtusername"
+              name="txtusername"
+              placeholder="Username"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="row-txt">
+            <input
+              type="password"
+              class="txtlg"
+              id="txtpassword"
+              name="txtpassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="row-txt">
+            i'm a:&nbsp;&nbsp;<input
+              type="radio"
+              id="adminrbtn"
+              checked
+              class="rbtncolor"
+              name="type"
+              value="admin"
+            />&nbsp;admin&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<input
+              type="radio"
+              class="rbtncolor"
+              name="type"
+              id="facultyrbtn"
+              value="faculty"
+            />&nbsp;faculty&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;<input
+              type="radio"
+              class="rbtncolor"
+              name="type"
+              id="studentrbtn"
+              value="student"
+            />&nbsp;student
+          </div>
+          <div class="row-txt">
+            <input type="submit" value="Sign in" id="Signinbtn" class="lgbtn" />
+          </div>
+        </form>
+        <div id="errorlogin">incorrect Password or Username !</div>
+      </div>
+    </div>
+    <div id="footer"><span>&copy;</span>&nbsp;chiragtalpada 2021</div>
+  </body>
+</html>

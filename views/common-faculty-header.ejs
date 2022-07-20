@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/faculty-profile.js"></script>
+    <script src="/javascripts/faculty-assignment.js"></script>
+    <script src="/javascripts/faculty-exam_marks.js"></script>
+    <script src="/javascripts/faculty-notice.js"></script>
+    <script src="/javascripts/faculty-event.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
+   
+
+    
+    <link rel='stylesheet' href='/stylesheets/admincss.css' />
+    <link rel='stylesheet' href='/stylesheets/faculty-profile.css' />
+    <link rel='stylesheet' href="/stylesheets/faculty-assignment.css"/>
+    <link rel='stylesheet' href="/stylesheets/faculty-exam_marks.css"/>
+    <link rel='stylesheet' href="/stylesheets/faculty-notice.css"/>
+    <link rel='stylesheet' href="/stylesheets/faculty-event.css"/>
+    
+
+</head>
+
+<body>
+    <div id="header-bar">
+        <img src="/images/book.png"><span class="cms-logo">CMS</span>
+        <span class="welcome-msg">Welcome , <%= username %> </span>
+        <div id="inner-header">
+            <form id="faculty-logoutfrm" method="POST" action="/faculty/logout">
+                <button type="submit"><img src="/images/logout.png">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div id="navbar-div">
+        <ul id="inner-navbar">
+            <li class="link-faculty-profile"><a href="/faculty">Profile</a></li>
+            <li class="link-faculty-assignment"><a href="/faculty/assignment">Assignment </a></li>
+            <li class="link-faculty-exam_marks"><a href="/faculty/exam_marks">Exam Marks </a></li>
+            <li class="link-faculty-notice"><a href="/faculty/notice">Notice </a></li>
+            <li class="link-faculty-event"><a href="/faculty/event">Event </a></li>
+        </ul>
+
+    </div>
+
+    <div id="admin-content">

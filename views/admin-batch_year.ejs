@@ -1,0 +1,57 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-batch_year').addClass('active-link');
+        $('.link-batch_year').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="batch-year-create" class="box-1">
+    <h3>Add Academic Year</h3>
+    <form method="POST" id="batch-year-createyearfrm">
+    <div>Year&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" id="batch-year-txtyear" class="batch-year-textbox" placeholder="Academinc Year" required autocomplete="off">
+    <span class="batch-year-erroryear">input valid Year</span>
+    </div>
+    <div>details :<input type="text" id="batch-year-txtyeardetails" class="batch-year-textbox" placeholder="Academinc Year details" required autocomplete="off" ></div>
+    <div><input type="submit" value="SAVE" id="batch-year-savebtn"></div>
+    </form>
+</div>
+
+<div id="batch-year-information" class="box-1">
+    <h3>Batch Year information</h3>
+    <table id="batch-year-table">
+        <thead>
+            <th>Batch Year</th>
+            <th>Batch Details</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% if(batch.length > 0) {%>
+
+                <% batch.forEach(function(row){ %>
+                    <tr>
+                        <td><%= row.batch_year %></td>
+                        <td><%= row.details %></td>
+                        <td><button class="batch-year-deletebtn" data-id="<%= row._id %>">delete</button></td>
+                    </tr>
+                <% }) %>
+
+
+
+            <%}else{%>
+                
+                <tr>
+                    <td colspan="3" align="center">Records Not Found</td>
+                </tr>
+                
+            <%}%>    
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<%- include('commonfooter') %>

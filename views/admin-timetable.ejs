@@ -1,0 +1,159 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-timetable').addClass('active-link');
+        $('.link-timetable').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-adddiv" class="box-1">
+
+    <h3>Create Timetable</h3>
+
+    <table class="subject-formtable">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="admin-timetab-batchddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td>
+                <select id="admin-timetab-courseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="admin-timetab-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>
+            </td>
+            <td><span class="admin-timetaberror"></span></td>
+            </tr>
+    </table>
+
+
+    <span id="admin-timetabledata">
+        <table id="admin-timetabletab" border="2" >
+            <thead>
+            <tr>
+                <td>Time</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td>Sat</td>
+            </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+            <tfoot>
+                <td colspan="7" align="center">
+                    <select id="admin-timetable-rowtype" >
+                        <option value="data">Data-row</option>
+                        <option value="break">Break-row</option>
+                    </select>                         
+                    <button id="admin-timetab-addrowbtn">add new row</button>
+                    <button id="admin-timetab-deleterowbtn">delete last row</button>
+                </td>
+            </tfoot>   
+        </table>
+    </span>
+    
+    <button id="admin-timetab-savebtn">SAVE</button>
+
+
+
+</div>
+
+<div id="student-adddiv">
+    <h3>Timetable information</h3>
+
+    <table class="subject-formtable">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="admin-timetable-displayacademicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td>
+                <select id="admin-timetable-displaycourseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="admin-timetable-displaysemesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>
+            </td>
+            
+            <td><input type="submit" value="display data" id="admin-timetable-displaybtn"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span class="admin-timetable-displayddlerror"></span></td>
+        </tr>
+    </table>
+
+    <div id="admin-timetable-deletetab">
+    </div>
+    <div id="admin-timetab-showtable">
+    </div>
+
+
+</div>
+
+
+
+
+<%- include('commonfooter') %>

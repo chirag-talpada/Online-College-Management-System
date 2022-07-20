@@ -1,0 +1,237 @@
+#student-adddiv{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    padding-left: 30px;
+    border-radius: 5px;
+}
+
+#student-txtaddress{
+    width: 260px;
+}
+
+#student-adddiv h3{
+    margin-bottom: 30px;
+}
+
+.suject-formtable tr td{
+    width: 300px;
+}
+
+.subject-textbox{
+    padding: 9px 14px;
+    font-size: 15px;
+    width: 230px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.student-gendertd{
+    border:1px solid gray;
+    padding: 12px;
+    width: 237px;
+    display: block;
+    margin-bottom: 3px;
+}
+.cursor{
+    cursor: pointer;
+}
+
+#student-courseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#student-academicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#student-txtid{
+    margin-bottom: 15px;
+    background-color: lightgray;
+}
+
+#student-savebtn{
+    padding: 10px 112px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#student-editsavebtn{
+    padding: 10px 112px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+
+#create_student-error{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+
+#create_editstudent-error{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+
+
+#student-informationdiv{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    padding-left: 30px;
+    border-radius: 5px;
+    width: 1700px;
+}
+
+.student-formtable tr td{
+    width: 300px;    
+}
+
+#student-displaycourseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#student-displayacademicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#student-displaybtn{
+    padding: 10px 62px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#student-informationdiv h3{
+    margin-bottom: 30px;
+}
+
+.student-displayddlerror{
+    color: red;
+    display: none;
+}
+
+#student-displaydatatable{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+#student-displaydatatable thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#student-displaydatatable th,
+#student-displaydatatable td{
+    padding: 12px 45px;
+    
+}
+
+#student-displaydatatable tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+
+#student-displaydatatable tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#student-displaydatatable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.student-viewbtn{
+    background-color: #099438;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+#student-editpanel{
+    display: none;
+}
+
+.student-updatecancel{
+    background:none;
+    color: #3ea7f1;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.student-deletebtn{
+    color: white;
+    background-color: rgb(253, 49, 49);
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+}
+
+.student-deletebtn:hover{
+    background-color: red;
+}
+
+.student-action{
+    padding: 20px 20px;
+}

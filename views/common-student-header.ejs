@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>College Management System</title>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/student-profile.js"></script>
+    <script src="/javascripts/student-assignment.js"></script>
+    <script src="/javascripts/student-exam_marks.js"></script>
+    <script src="/javascripts/student-timetable.js"></script>
+    <script src="/javascripts/student-subject.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/admincss.css" />
+    <link rel="stylesheet" href="/stylesheets/student-profile.css" />
+    <link rel="stylesheet" href="/stylesheets/student-assignment.css" />
+    <link rel="stylesheet" href="/stylesheets/student-exam_marks.css" />
+    <link rel="stylesheet" href="/stylesheets/student-timetable.css" />
+    <link rel="stylesheet" href="/stylesheets/student-subject.css" />
+    <link rel="stylesheet" href="/stylesheets/admin-timetable.css" />
+    <link rel="stylesheet" href="/stylesheets/faculty-notice.css" />
+    <link rel="stylesheet" href="/stylesheets/faculty-event.css" />
+  </head>
+
+  <body>
+    <div id="header-bar">
+      <img src="/images/book.png" /><span class="cms-logo">CMS</span>
+      <span class="welcome-msg">Welcome , <%= username %> </span>
+      <div id="inner-header">
+        <form id="faculty-logoutfrm" method="POST" action="/student/logout">
+          <button type="submit"><img src="/images/logout.png" />Logout</button>
+        </form>
+      </div>
+    </div>
+    <div id="navbar-div">
+      <ul id="inner-navbar">
+        <li class="link-student-profile"><a href="/student">Profile</a></li>
+        <li class="link-student-subject">
+          <a href="/student/subject">Subject</a>
+        </li>
+        <li class="link-student-timetable">
+          <a href="/student/timetable">Timetable</a>
+        </li>
+        <li class="link-student-assignment">
+          <a href="/student/assignment">Assignment </a>
+        </li>
+        <li class="link-student-exam_marks">
+          <a href="/student/exam_marks">Exam Marks </a>
+        </li>
+        <li class="link-student-notice">
+          <a href="/student/notice">Notice </a>
+        </li>
+        <li class="link-student-event"><a href="/student/event">Event </a></li>
+      </ul>
+    </div>
+
+    <div id="admin-content">

@@ -1,0 +1,172 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-faculty').addClass('active-link');
+        $('.link-faculty').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-adddiv" class="box-1">
+    <div id="faculty-addpanel" >
+    <h3>Add Faculty</h3>
+    <form method="POST" id="faculty-savefrm">
+        <table class="suject-formtable">
+            <tr>
+                <td>Faculty Name :</td>
+                <td>Date of Birth :</td>
+                <td>Gender :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="faculty-txtname" class="subject-textbox" placeholder="Enter Faculty Name" required autocomplete="off" ></td>
+                <td><input type="date" id="faculty-txtdate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required ></td>
+                <td ><span class="student-gendertd"><input class="cursor" type="radio" name="faculty-gender" value="male" checked>&nbsp;&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="cursor" name="faculty-gender" value="female">&nbsp;&nbsp;female</span></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td>Email :</td>
+                <td>Phone no :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><textarea style="resize: none;" placeholder="Type Address here" id="faculty-txtaddress" rows="2" cols="34" required autocomplete="off" ></textarea></td>
+                <td><input type="email" id="faculty-txtemail" class="subject-textbox" placeholder="Enter Email" required autocomplete="off" ></td>
+                <td><input type="text" id="faculty-txtmobile" class="subject-textbox" placeholder="Enter Mobile Number" required autocomplete="off" ></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Qualification Details:</td>
+                <td>Joining Date :</td>
+                <td>Faculty ID :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea style="resize: none;" placeholder="Type here" id="faculty-txtqlydetails" rows="2" cols="34" required autocomplete="off" ></textarea>
+                </td>
+                <td>
+                    <input type="date" id="faculty-txtjoindate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required >
+                </td>
+                <td><input type="text" id="faculty-txtid" placeholder="Faculty ID" class="subject-textbox" required readonly></td>
+                <td><button id="faculty-generateid">Generate ID</button></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="SAVE" id="student-savebtn">
+                <input type="hidden" id="faculty-no">
+                </td>
+                <td  colspan="2" ><span id="create_faculty-error"></span></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <div id="faculty-editpanel">
+        <h3>Update information <button class="faculty-updatecancel">Cancel</button> </h3>
+        <form method="POST" id="faculty-editfrm">
+            <table class="suject-formtable">
+                <tr>
+                    <td>Faculty Name :</td>
+                    <td>Date of Birth :</td>
+                    <td>Gender :</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="faculty-edittxtname" class="subject-textbox" placeholder="Enter Faculty Name" required autocomplete="off" ></td>
+                    <td><input type="date" id="faculty-edittxtdate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required ></td>
+                    <td ><span class="student-gendertd"><input class="cursor" type="radio" name="faculty-editgender" id="faculty-gmale" value="male" checked>&nbsp;&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="faculty-gfemale" class="cursor" name="faculty-editgender" value="female">&nbsp;&nbsp;female</span></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Address :</td>
+                    <td>Email :</td>
+                    <td>Phone no :</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><textarea style="resize: none;" placeholder="Type Address here" id="faculty-edittxtaddress" rows="2" cols="34" required autocomplete="off" ></textarea></td>
+                    <td><input type="email" id="faculty-edittxtemail" class="subject-textbox" placeholder="Enter Email" required autocomplete="off" ></td>
+                    <td><input type="text" id="faculty-edittxtmobile" class="subject-textbox" placeholder="Enter Mobile Number" required autocomplete="off" ></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Qualification Details:</td>
+                    <td>Joining Date :</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea style="resize: none;" placeholder="Type here" id="faculty-edittxtqlydetails" rows="2" cols="34" required autocomplete="off" ></textarea>
+                    </td>
+                    <td>
+                        <input type="date" id="faculty-edittxtjoindate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required >
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="UPDATE" id="student-savebtn">
+                    <input type="hidden" id="faculty-editid">
+                    </td>
+                    <td  colspan="2" ><span id="create_faculty-editerror"></span></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        
+</div>
+    
+    <div id="faculty-informationdiv" class="box-1">
+        <h3>Faculty information</h3>
+        <table id="student-displaydatatable" class="faculty-displaytable" >
+            <thead>
+                <th>Faculty Name</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone No</th>
+                <th>Qualification</th>
+                <th>Joining Date</th>
+                <th>Faculty ID</th>
+                <th colspan="2">Action</th>
+            </thead>
+            <tbody>
+             
+                <% if(fdata.length > 0) {%>
+        
+                    <% fdata.forEach(function(row){ %>
+                        <tr>
+                            <td><%= row.faculty_name %></td>
+
+                 
+                            <td><%= row.dob %></td>
+                            <td><%= row.gender %></td>
+                            <td><%= row.address %></td>
+                            <td><%= row.email %></td>
+                            <td><%= row.mobileno %></td>
+                            <td><%= row.qualification %></td>
+                            <td><%= row.joindate %></td>
+                            <td><%= row.facultyid %></td>
+                            <td><button class="faculty-editbtn" data-editfid="<%= row._id %>" >edit</button></td><td><button class="faculty-deletebtn" data-fid="<%= row._id %>">delete</button></td>
+                        </tr>
+                    <% }) %>
+        
+        
+        
+                <%}else{%>
+                    
+                    <tr>
+                        <td colspan="10" align="center">Records Not Found</td>
+                    </tr>
+                    
+                <%}%>    
+            </tbody>
+        </table>
+        
+    </div>
+
+
+<%- include('commonfooter') %>

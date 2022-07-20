@@ -1,0 +1,136 @@
+#admin-notice-noticetypeddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-notice-savebtn{
+    padding: 10px 30px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;   
+}
+
+#admin-notice-txtdetails{
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+#admin-notice-editnoticetypeddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-notice-editsavebtn{
+    padding: 10px 30px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;   
+}
+
+#admin-notice-edittxtdetails{
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#admin-notice-editpanel
+{
+    display: none;
+}
+
+.notice-deletebtn{
+    color: white;
+    background-color: rgb(253, 49, 49);
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+}
+
+.notice-deletebtn:hover{
+    background-color: red;
+}
+
+.notice-editbtn{
+    background-color: #38c466;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.notice-editbtn:hover{
+    background-color: #00ff55;
+}
+
+#notice-table{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 1100px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+#notice-table thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#notice-table th,
+#notice-table td{
+    padding: 12px 15px;
+}
+
+
+#notice-table tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#notice-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#notice-table tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+.big-td{
+    width: 400px;
+}
+
+.notice-updatecancel{
+    background:none;
+    color: #3ea7f1;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}

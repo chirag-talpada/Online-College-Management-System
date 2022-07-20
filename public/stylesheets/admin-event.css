@@ -1,0 +1,96 @@
+.event-fileborder{
+    border: 1px solid gray;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-left: 11px;
+}
+
+#admin-event-txtdetails{
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.admin-event-error{
+    color: red;
+    display: none;
+}
+
+#admin-event-savebtn{
+    padding: 10px 30px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;   
+}
+
+#admin-event-alertbox{
+    display: none;
+}
+
+.admin-event-deletebtn{
+    color: white;
+    background-color: rgb(253, 49, 49);
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+}
+
+.admin-event-deletebtn:hover{
+    background-color: red;
+}
+
+.admin-event-editbtn{
+    background-color: #38c466;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.admin-event-viewimg{
+    background-color: #124ebe;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.medium-td{
+    width: 300px;
+}
+
+
+.admin-event-editbtn:hover{
+    background-color: #00ff55;
+}
+
+#admin-event-editpanel{
+    display: none;
+}
+
+.event-updatecancel{
+    background:none;
+    color: #3ea7f1;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.admin-event-editerror{
+    color: red;
+    display: none;
+}

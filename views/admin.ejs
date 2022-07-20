@@ -1,0 +1,81 @@
+<%- include('commonheader') %>
+
+<script>
+    $(document).ready(function(){
+
+        $('.link-profile').addClass('active-link');
+        $('.link-profile').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+
+
+        <div id="profile-account-info" class="box-1" style="margin-bottom: -10px !important;">
+            <h3>Account information</h3>
+            <div>Your username <button class="profile-edit">Edit</button><button class="profile-cancel">Cancel</button>
+            </div>
+            <form id="usernamefrm" method="POST">
+                <div><input type="text" class="profile-textbox" value='<%= username %>' id="txtusername" required
+                        readonly autocomplete="off"> <input type="submit" value="UPDATE" class="updatebtn"> </div>
+            </form>
+            <div><button id="changepass" class="profile-changep">Change Password</button><span
+                    class="password-cancel-panel">Change Password<button class="password-cancel">Cancel</button></span>
+                <div id="password-area">
+                    <form id="passwordfrm" method="POST">
+                        <div><input type="password" class="profile-ptextbox" placeholder="Type Current Password"
+                                id="txtcurrentpass" required autocomplete="off"><span class="error-currpass">incorrect
+                                old Password</span></div>
+                        <div><input type="password" class="profile-ptextbox" placeholder="Type New Password"
+                                id="txtnewpass" required autocomplete="off"></div>
+                        <div><input type="password" class="profile-ptextbox" placeholder="Retype New Password"
+                                id="txtconfirmnewpass" required autocomplete="off"><span class="error-pass">New Password
+                                do not match</span></div>
+                        <div><input type="submit" value="CHANGE PASSWORD" class="changepassbtn"></div>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="profile-personal-info" class="box-1">
+            <h3>Personal information<button class="personal-edit">Edit</button><button class="personal-cancel">Cancel</button></h3>
+            <div id="personal-content"> 
+                <% if(admin_details.fullname!='') {%>
+                
+                <form method="POST" id="personalfrm">
+                <div>Your FullName</div>
+                <div><input type="text" placeholder="Name" id="txtfullname" value="<%= admin_details.fullname %>" class="personal-textbox" required autocomplete="off" disabled></div>
+                <div>Mobile Number</div>
+                <div><input type="text" placeholder="Mobile Number" id="txtmobile" value="<%= admin_details.mobileno %>" class="personal-textbox" required autocomplete="off" disabled><span class="error-mobile">Invalid Mobile Number</span></div>
+                <div>Email</div>
+                <div><input type="email" placeholder="Email" id="txtemail" value="<%= admin_details.email %>" class="personal-textbox" required autocomplete="off" disabled><span class="error-email">Invalid Email</span></div>
+                <% if(admin_details.gender != 'female') { %>
+                <div id="gender-panel">Gender :&nbsp;&nbsp;<input type="radio" name="gender" id="gmale" value="male" checked disabled >&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="gfemale" value="female" disabled >&nbsp;female</div>
+                <% }else{ %>
+                    <div id="gender-panel">Gender :&nbsp;&nbsp;<input type="radio" name="gender" id="gmale" value="male" disabled >&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="gfemale" value="female" checked disabled >&nbsp;female</div>
+                <% } %>    
+                <div><input type="submit" value="SAVE" class="savebtn"></div>
+                </form>
+
+                <% }else{ %>
+                
+                <form method="POST" id="personalfrm">
+                <div>Your FullName</div>
+                <div><input type="text" placeholder="Name" id="txtfullname" class="personal-textbox" required autocomplete="off" disabled></div>
+                <div>Mobile Number</div>
+                <div><input type="text" placeholder="Mobile Number" id="txtmobile" class="personal-textbox" required autocomplete="off" disabled><span class="error-mobile">Invalid Mobile Number</span></div>
+                <div>Email</div>
+                <div><input type="email" placeholder="Email" id="txtemail" class="personal-textbox" required autocomplete="off" disabled><span class="error-email">Invalid Email</span></div>
+                <div id="gender-panel">Gender :&nbsp;&nbsp;<input type="radio" name="gender" id="gmale" value="male" checked disabled >&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" id="gfemale" value="female" disabled >&nbsp;female</div>
+                <div><input type="submit" value="SAVE" class="savebtn"></div>
+                </form>
+                       
+                <% } %>
+            </div>  
+        </div>
+
+<%- include('commonfooter') %>

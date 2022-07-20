@@ -1,0 +1,78 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-profile').addClass('active-link');
+        $('.link-student-profile').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+
+<div id="faculty-profile-accountinfo" class="box-1">
+    <h3>Account information</h3>
+    <div>Your Username ID</div>
+    
+    <div>
+    <input type="text" class="faculty-textbox" value='<%= student.stdid %>' readonly>
+    </div>
+    
+    <div><button id="changepass" class="profile-changep">Change Password</button><span
+        class="password-cancel-panel">Change Password<button class="password-cancel">Cancel</button></span>
+        <div id="password-area">
+         <form id="passwordfrm" method="POST">
+            <div><input type="password" class="profile-ptextbox" placeholder="Type Current Password"
+                    id="txtcurrentpass" required autocomplete="off"><span class="error-currpass">incorrect
+                    old Password</span></div>
+            <div><input type="password" class="profile-ptextbox" placeholder="Type New Password"
+                    id="txtnewpass" required autocomplete="off"></div>
+            <div><input type="password" class="profile-ptextbox" placeholder="Retype New Password"
+                    id="txtconfirmnewpass" required autocomplete="off"><span class="error-pass">New Password
+                    do not match</span></div>
+            <div><input type="submit" value="CHANGE PASSWORD" class="changepassbtn"></div>
+
+          </form>
+        </div>
+    </div>
+</div>
+
+<div id="faculty-profile-accountinfo" class="box-1">
+    <h3>Personal information</h3>
+    <table id="student-personaltable">
+        <tr>
+            <td>Name</td>
+            <td>:&nbsp;&nbsp;<%= student.student_name %></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>:&nbsp;&nbsp;<%= student.gender %></td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td>:&nbsp;&nbsp;<span class="changedob"><%= student.dob %></span></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>:&nbsp;&nbsp;<%= student.email %></td>
+        </tr>
+        <tr>
+            <td>Mobile Number</td>
+            <td>:&nbsp;&nbsp;<%= student.mobileno %></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>:&nbsp;&nbsp;<%= student.address %></td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>:&nbsp;&nbsp;<%= student.course %></td>
+        </tr>
+        <tr>
+            <td>Academic Year</td>
+            <td>:&nbsp;&nbsp;<%= student.batch_year %></td>
+        </tr>
+    </table>
+</div>
+
+
+<%- include('common-student-footer') %>

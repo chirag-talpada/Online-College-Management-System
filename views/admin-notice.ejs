@@ -1,0 +1,131 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-notice').addClass('active-link');
+        $('.link-notice').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="subject-adddiv" class="box-1">
+    
+    <div id="admin-notice-addpanel">
+    <h3>Add new notice</h3>
+    <form id="admin-notice-addnoticefrm" method="POST">
+    <table class="subject-formtable">
+        <tr>
+            <td>Subject :</td>
+            <td>Notice for :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="text" id="admin-notice-subjecttxt" placeholder="Enter Subject" class="subject-textbox" autocomplete="off" required></td>
+            <td>
+                <select id="admin-notice-noticetypeddl">
+                    <option value="all" selected>All</option>
+                    <option value="students">Students</option>
+                    <option value="faculty">Faculty</option>
+                </select>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3">Notice Details :</td>
+        </tr>
+        <tr>
+            <td colspan="3"><textarea style="resize: none;" placeholder="notice details..." id="admin_notice_txtdetails" rows="6" cols="104" name="assignmenttxt"  required autocomplete="off" ></textarea></td>
+        </tr>
+        <tr>
+           <td colspan="3"> <input type="submit" style="margin-top: 20px;" value="SEND" id="admin-notice-savebtn"></td>
+        </tr>
+    </table>
+    </form>
+    </div>
+
+    <div id="admin-notice-editpanel">
+        <h3>Update notice information<button class="notice-updatecancel">Cancel</button></h3>
+        <form id="admin-notice-editnoticefrm" method="POST">
+        <table class="subject-formtable">
+            <tr>
+                <td>Subject :</td>
+                <td>Notice for :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="admin-notice-editsubjecttxt" placeholder="Enter Subject" class="subject-textbox" required></td>
+                <td>
+                    <select id="admin-notice-editnoticetypeddl">
+                        <option value="all" selected>All</option>
+                        <option value="students">Students</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </td>
+                <td><input type="hidden" id="admin-notice-editidtxt"></td>
+            </tr>
+            <tr>
+                <td colspan="3">Notice Details :</td>
+            </tr>
+            <tr>
+                <td colspan="3"><textarea style="resize: none;" placeholder="Notice details..." id="admin_notice_edittxtdetails" name="assignmenttxt1" rows="6" cols="104" required autocomplete="off" ></textarea></td>
+            </tr>
+            <tr>
+               <td colspan="3"> <input type="submit" style="margin-top: 20px;" value="UPDATE" id="admin-notice-editsavebtn"></td>
+            </tr>
+        </table>
+        </form>
+        </div>
+
+
+</div>
+
+
+
+<div id="course-informationdiv">
+    <h3>Manage Notice</h3>
+
+    <table id="notice-table" >
+        <thead>
+            <th>Subject</th>
+            <th>Notice for</th>
+            <th>Details</th>
+            <th>date</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <% if(notice.length > 0) {%>
+    
+                <% notice.forEach(function(row){ %>
+                    <tr>
+                        <td><%= row.subject %></td>
+                        <td><%= row.receiver %></td>
+                        <td><a class="admin-event-viewimg" target="_blank" href="/admin/notice-data/<%= row._id %>">view</a></td>
+                        <td><%= row.date %></td>
+                        <td><button class="notice-editbtn" data-editid="<%= row._id %>" >edit</button><button class="notice-deletebtn" data-deleteid="<%= row._id %>">delete</button></td>
+                    </tr>
+                <% }) %>
+    
+    
+    
+            <%}else{%>
+                
+                <tr>
+                    <td colspan="5" align="center">Records Not Found</td>
+                </tr>
+                
+            <%}%>    
+        </tbody>
+    </table>
+    
+    </div>
+    
+    <script>
+        CKEDITOR.replace('assignmenttxt');
+    </script>
+    <script>
+        CKEDITOR.replace('assignmenttxt1');
+    </script>
+    
+
+
+<%- include('commonfooter') %>

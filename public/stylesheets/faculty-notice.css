@@ -1,0 +1,36 @@
+#notice-div{
+    border: 5px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius:0px 25px 25px 25px;
+    padding-left: 25px;
+    display: inline-block;
+    min-width: 1150px;
+    max-width: 1150px;
+    box-sizing: border-box;
+}
+
+#notice-div h3{
+
+    
+    margin-top: 20px;
+    text-align: center;
+}
+
+#notice-div h3 span{
+    padding: 15px;
+    text-decoration: underline;
+    
+}
+
+#notice-div h5{
+    color: gray;
+}
+
+#noice-detail-div{
+    padding: 15px;
+    margin-top: 20px;
+}

@@ -1,0 +1,299 @@
+#faculty-exammarks-div{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 25px;
+}
+
+#faculty-exammarks-insertbtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+#faculty-exammarks-editbtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;   
+}
+
+#faculty-insertexammarks-div{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 25px;   
+}
+
+#faculty-editexammarks-div{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 25px;   
+}
+
+#faculty-exammarks-academicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-courseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-txtsname{
+    margin-bottom: 15px;
+    margin-left: 0px;
+    background-color: lightgray;
+}
+
+#faculty-exammarks-scodeddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.faculty-exammarks-error{
+    color: red;
+    display: none;
+}
+#faculty-exammarks-editacademicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-editcourseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-editsemesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+#faculty-exammarks-edittxtsname{
+    margin-bottom: 15px;
+    margin-left: 0px;
+    background-color: lightgray;
+}
+
+#faculty-exammarks-editscodeddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.faculty-exammarks-editerror{
+    color: red;
+    display: none;
+}
+
+#faculty-exammarks-table tr td{
+   
+    width: 300px;
+}
+#faculty-exammarks-table{
+   
+    margin-top: 20px;
+}
+
+#faculty-exammarks-displaydatatable{
+    
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 1200px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    
+}
+
+#faculty-exammarks-displaydatatable thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#faculty-exammarks-displaydatatable th,
+#faculty-exammarks-displaydatatable td{
+    padding: 12px 15px;
+}
+
+
+#faculty-exammarks-displaydatatable tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#faculty-exammarks-displaydatatable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#faculty-exammarks-displaydatatable tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+#faculty-exammarks-editdisplaydatatable{
+    
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 1200px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    
+}
+
+#faculty-exammarks-editdisplaydatatable thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#faculty-exammarks-editdisplaydatatable th,
+#faculty-exammarks-editdisplaydatatable td{
+    padding: 12px 15px;
+}
+
+
+#faculty-exammarks-editdisplaydatatable tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#faculty-exammarks-editdisplaydatatable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#faculty-exammarks-editdisplaydatatable tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+.faculty-exammarks-totalbody{
+    display: none;
+}
+
+.exammarks-tabletxt{
+    text-align: center;
+    padding: 9px 14px;
+    font-size: 15px;
+    width:130px;   
+}
+
+.faculty-exammarks-txttotal-error{
+    color: red;
+    display: none;
+    margin-left: 5px;
+}
+
+#faculty-exammarks-savebtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    display: none;
+}
+#faculty-exammarks-editsavebtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+    display: none;
+}
+
+#faculty-insertexammarks-div{
+    display: none;
+}
+
+#faculty-editexammarks-div{
+    display: none;
+}
+
+#faculty-exammarks-deletebtn{
+    padding: 10px 30px;
+    background-color: rgb(185, 29, 29);
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;      
+    margin-top: 15px;
+    display: none;
+}

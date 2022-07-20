@@ -1,0 +1,173 @@
+#course-creatediv{
+border-top: 8px solid #3ea7f1;
+background-color: white;
+margin:15px;
+position: relative;
+top:20px;
+padding: 15px;
+padding-left: 30px;
+border-radius: 5px;
+}
+
+#course-creatediv h3{
+    margin-bottom: 30px;
+}
+
+#course-txtcourse{
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+#course-edittxtcourse{
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+#course-txtsemester{
+    margin-left: 0px;
+}
+#course-edittxtsemester{
+    margin-left: 0px;
+}
+
+#course-txtyear{
+
+    margin-left: 0px;
+}
+#course-edittxtyear{
+
+    margin-left: 0px;
+}
+
+#course-savebtn{
+    padding: 12px 114px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 8px;    
+}
+#course-updatebtn{
+    padding: 12px 104px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 8px;    
+}
+
+
+.course-erroryear{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+.course-editerroryear{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+
+.course-errorname{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+.course-editerrorname{
+    margin-left: 10px;
+    color: red;
+    display: none;
+}
+
+#course-informationdiv{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    padding-left: 30px;
+    border-radius: 5px;
+}
+
+#course-table{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+#course-table thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#course-table th,
+#course-table td{
+    padding: 12px 15px;
+}
+
+
+#course-table tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#course-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#course-table tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+.course-deletebtn{
+    color: white;
+    background-color: rgb(253, 49, 49);
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    cursor: pointer;
+}
+
+.course-deletebtn:hover{
+    background-color: red;
+}
+
+#course-editpanel{
+    display: none;
+}
+
+.course-editbtn{
+    background-color: #38c466;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+.course-editbtn:hover{
+    background-color: #00ff55;
+}
+
+.course-updatecancel{
+    background:none;
+    color: #3ea7f1;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 20px;
+}

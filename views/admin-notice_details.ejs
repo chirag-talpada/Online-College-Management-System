@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice details</title>
+    <style>
+        body
+        {
+            background: linear-gradient(45deg,#2193b0,#197186,#42c2e2,#59a5b8,#096c85,#6dd5ed);
+            background-repeat: no-repeat;
+            background-position:center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .admin-event-newtabdisp{
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            
+        }
+        #admin-event-newtabimgdiv
+        {
+            width: 70%;
+            height: 95vh;
+            margin:auto;
+            overflow: hidden;
+            border-radius: 10px;
+            font-size: 19px;
+            background-color: white;
+            padding-top: 30px;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="admin-event-newtabimgdiv">
+       <%- ndata.details %>
+    </div>
+</body>
+</html>

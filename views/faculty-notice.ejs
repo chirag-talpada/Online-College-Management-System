@@ -1,0 +1,34 @@
+<%- include('common-faculty-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-faculty-notice').addClass('active-link');
+        $('.link-faculty-notice').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<% if(notice.length > 0) {%>
+    
+    <% notice.forEach(function(row){ %>
+        <div id="notice-div">
+            <h5><%= row.date %></h5>            
+            <h3><span><%= row.subject %></span></h3>
+            <div id="noice-detail-div" >
+                <%- row.details %>
+            </div>
+        </div>
+    <% }) %>
+
+<%}else{%>
+    
+    <div id="notice-div">
+        <h3>There is no any notice!yet</h3>
+    </div>
+    
+<%}%>    
+
+
+
+
+<%- include('common-faculty-footer') %>

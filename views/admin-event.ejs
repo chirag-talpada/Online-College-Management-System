@@ -1,0 +1,161 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-event').addClass('active-link');
+        $('.link-event').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="subject-adddiv" class="box-1">
+    <div id="admin-event-addpanel">
+    <h3>Add New Event</h3>
+    <form  id="admin-event-addeventfrm" name="admin-event-addeventfrm" method="POST" enctype="multipart/form-data" action="/admin/event-save">
+        <table class="subject-formtable">
+            <tr>
+                <td>Event Name :</td>
+                <td>Event Guide :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="admin-event-eventnametxt" name="admin_event_eventnametxt" placeholder="Enter Event Name" class="subject-textbox" required autocomplete="off" ></td>
+                <td><input type="text" id="admin-event-eventguidetxt" name="admin_event_eventguidetxt" placeholder="Enter Event Guide" class="subject-textbox" required autocomplete="off"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Start Time :</td>
+                <td>End Time :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="admin-event-eventstimetxt" name="admin_event_eventstimetxt" placeholder="Enter Start-Time" class="subject-textbox" required autocomplete="off"></td>
+                <td><input type="text" id="admin-event-eventetimetxt" name="admin_event_eventetimetxt" placeholder="Enter End-Time" class="subject-textbox" required autocomplete="off"></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Date :</td>
+                <td>Event Photo :</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><input type="date" id="admin-event-datetxt" name="admin_event_datetxt"  class="subject-textbox" required></td>
+                <td>
+                   <span class="event-fileborder"> <input type="file" id="admin-event-filephoto" name="admin_event_filephoto" required> </span>
+                </td>
+                <td><span class="admin-event-error" ></span></td>
+            </tr>
+            <tr>
+                <td colspan="3">Details :</td>
+             </tr>
+             <tr>
+                <td colspan="3"><textarea style="resize: none;" placeholder="Event details..." id="admin-event-txtdetails" name="admin_event_txtdetails" rows="3" cols="51" required autocomplete="off" ></textarea></td>
+             </tr>
+            <tr>
+               <td colspan="3"> <input type="submit" value="UPLOAD EVENT" id="admin-event-savebtn"></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+
+    <div id="admin-event-editpanel">
+        <h3>Update Event <button class="event-updatecancel">Cancel</button> </h3>
+        <form  id="admin-event-editeventfrm" name="admin-event-editeventfrm" method="POST" enctype="multipart/form-data" action="/admin/event-update">
+            <table class="subject-formtable">
+                <tr>
+                    <td>Event Name :</td>
+                    <td>Event Guide :</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="admin-event-editeventnametxt" name="admin_event_editeventnametxt" placeholder="Enter Event Name" class="subject-textbox" required autocomplete="off" ></td>
+                    <td><input type="text" id="admin-event-editeventguidetxt" name="admin_event_editeventguidetxt" placeholder="Enter Event Guide" class="subject-textbox" required autocomplete="off"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Start Time :</td>
+                    <td>End Time :</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="admin-event-editeventstimetxt" name="admin_event_editeventstimetxt" placeholder="Enter Start-Time" class="subject-textbox" required autocomplete="off"></td>
+                    <td><input type="text" id="admin-event-editeventetimetxt" name="admin_event_editeventetimetxt" placeholder="Enter End-Time" class="subject-textbox" required autocomplete="off"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Date :</td>
+                    <td>Event Photo :</td>
+                    <td><input type="hidden" id="admin-event-editid" name="admin_event_editid"></td>
+                </tr>
+                <tr>
+                    <td><input type="date" id="admin-event-editdatetxt" name="admin_event_editdatetxt"  class="subject-textbox" required></td>
+                    <td>
+                       <span class="event-fileborder"> <input type="file" id="admin-event-editfilephoto" class="admin-event-fileuploader" name="admin_event_filephoto" > </span>
+                    </td>
+                    <td><span class="admin-event-editerror" ></span>
+                    <span class="admin-event-suggestion" style="color: green;">if you don't want to change image! then Don't choose image!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">Details :</td>
+                 </tr>
+                 <tr>
+                    <td colspan="3"><textarea style="resize: none;" placeholder="Event details..." id="admin-event-edittxtdetails" name="admin_event_edittxtdetails" rows="3" cols="51" required autocomplete="off" ></textarea></td>
+                 </tr>
+                <tr>
+                   <td colspan="3"> <input type="submit" value="UPDATE EVENT" id="admin-event-savebtn"></td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    
+
+</div>
+<div id="admin-event-alertbox"><%= msg %></div>
+
+<div id="course-informationdiv" class="box-1">
+    <h3>Manage Events</h3>
+
+    <table id="notice-table" >
+        <thead>
+            <th class="medium-td" >Event Name</th>
+            <th class="medium-td">Event Guide</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Date</th>
+            <th>image</th>
+            <th class="big-td">Details</th>
+            <th class="medium-td">Action</th>
+        </thead>
+        <tbody>
+            <% if(event.length > 0) {%>
+    
+                <% event.forEach(function(row){ %>
+                    <tr>
+                        <td><%= row.event_name %></td>
+                        <td><%= row.event_g %></td>
+                        <td><%= row.start_time %></td>
+                        <td><%= row.end_time %></td>
+                        <td><%= row.e_stringdate %></td>
+                        <td><a class="admin-event-viewimg" target="_blank" href="/admin/event-image/<%= row.imgurl %>">view</a></td>
+                        <td><%= row.details %></td>
+                        <td><button class="admin-event-editbtn" data-editid="<%= row._id %>" >edit</button><button class="admin-event-deletebtn" data-deleteid="<%= row._id %>">delete</button></td>
+                    </tr>
+                <% }) %>
+    
+    
+    
+            <%}else{%>
+                
+                <tr>
+                    <td colspan="8" align="center">Records Not Found</td>
+                </tr>
+                
+            <%}%>    
+        </tbody>
+    </table>
+    
+    </div>
+
+
+<%- include('commonfooter') %>

@@ -1,0 +1,39 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-assignment').addClass('active-link');
+        $('.link-student-assignment').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-subjectdiv" class="box-1">
+    <h3>Assignment information</h3>
+
+    <table id="student-subject-table">
+        <tr>
+            <td>Semester :</td>
+            <td>
+                <input type="hidden" id="student-assignment-course" value="<%= student.course %>">
+                <input type="hidden" id="student-assignment-batch" value="<%= student.batch_year %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="student-assignment-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            <td><button id="student-assignment-dispbtn">display</button></td>
+        </tr>
+        <tr><td><span class="student-assignment-error"></span></td></tr>
+    </table>
+
+
+</div>
+<div id="student-assignment-disparea">
+    
+</div>
+
+<%- include('common-student-footer') %>

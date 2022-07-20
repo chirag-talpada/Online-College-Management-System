@@ -1,0 +1,189 @@
+<%- include('commonheader') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student').addClass('active-link');
+        $('.link-student').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-adddiv" class="box-1">
+    <div id="student-addpanel">
+    <h3>Add Student</h3>
+    <form method="POST" id="student-savefrm">
+        <table class="suject-formtable">
+            <tr>
+                <td>Student Name :</td>
+                <td>Date of Birth :</td>
+                <td>Gender :</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="student-txtstdname" class="subject-textbox" placeholder="Enter Student Name" required autocomplete="off" ></td>
+                <td><input type="date" id="student-txtstddate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required ></td>
+                <td ><span class="student-gendertd"><input class="cursor" type="radio" name="student-gender" value="male" checked>&nbsp;&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="cursor" name="student-gender" value="female">&nbsp;&nbsp;female</span></td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td>Email :</td>
+                <td>Phone no :</td>
+            </tr>
+            <tr>
+                <td><textarea style="resize: none;" placeholder="Type Address here" id="student-txtaddress" rows="2" cols="34" required autocomplete="off" ></textarea></td>
+                <td><input type="email" id="student-txtemail" class="subject-textbox" placeholder="Enter Email" required autocomplete="off" ></td>
+                <td><input type="text" id="student-txtmobile" class="subject-textbox" placeholder="Enter Mobile Number" required autocomplete="off" ></td>
+            </tr>
+            <tr>
+                <td>Course :</td>
+                <td>Academic Year :</td>
+                <td>Student ID :</td>
+            </tr>
+            <tr>
+                <td>
+                    <select id="student-courseddl" >
+                        <option value=" " selected disabled >select course</option>
+                        <% if(course.length > 0 ){ %>
+                            <% course.forEach(function(row){ %>
+    
+                                <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+    
+                            <% }) %>
+                        <%}else {%>
+                        <option value=" " disabled>course not found</option>
+                        <% } %>
+                    </select>
+                </td>
+                <td>
+                    <select id="student-academicyearddl">
+                        <option value=" " selected disabled>select Academic Year</option>
+                        <% if(batch.length > 0 ){ %>
+                            <% batch.forEach(function(row){ %>
+    
+                                <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+    
+                            <% }) %>
+                        <%}else {%>
+                        <option value=" " disabled>Academic Year not found</option>
+                        <% } %>
+                    </select>
+                </td>
+                <td><input type="text" id="student-txtid" placeholder="Student ID" class="subject-textbox" required readonly></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="SAVE" id="student-savebtn">
+                <input type="hidden" id="student-sno">
+                </td>
+                <td  colspan="2" ><span id="create_student-error"></span></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <div id="student-editpanel">
+        <h3>Update Student information<button class="student-updatecancel">Cancel</button></h3>
+        <form method="POST" id="student-updatefrm">
+            <table class="suject-formtable">
+                <tr>
+                    <td>Student Name :</td>
+                    <td>Date of Birth :</td>
+                    <td>Gender :</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="student-edittxtstdname" class="subject-textbox" placeholder="Enter Student Name" required autocomplete="off" ></td>
+                    <td><input type="date" id="student-edittxtstddate" class="subject-textbox" pattern="\d{4}-\d{2}-\d{2}"  required ></td>
+                    <td ><span class="student-gendertd"><input class="cursor" type="radio" id="student-gmale" name="student-editgender" value="male" >&nbsp;&nbsp;male&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="cursor" id="student-gfemale" name="student-editgender" value="female">&nbsp;&nbsp;female</span></td>
+                </tr>
+                <tr>
+                    <td>Address :</td>
+                    <td>Email :</td>
+                    <td>Phone no :</td>
+                </tr>
+                <tr>
+                    <td><textarea style="resize: none;" placeholder="Type Address here" id="student-edittxtaddress" rows="2" cols="32" required autocomplete="off" ></textarea></td>
+                    <td><input type="email" id="student-edittxtemail" class="subject-textbox" placeholder="Enter Email" required autocomplete="off" ></td>
+                    <td><input type="text" id="student-edittxtmobile" class="subject-textbox" placeholder="Enter Mobile Number" required autocomplete="off" ></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="UPDATE" id="student-editsavebtn">
+                    <input type="hidden" id="student-editid">
+                    </td>
+                    <td  colspan="2" ><span id="create_editstudent-error"></span></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        
+</div>
+
+<div id="student-informationdiv" class="box-1">
+    <h3>Student information</h3>
+
+    <table class="student-formtable">
+        <tr>
+            <td>Course :</td>
+            <td>Academic Year :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="student-displaycourseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            
+            <td>
+                <select id="student-displayacademicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            <td><input type="submit" value="display data" id="student-displaybtn"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><span class="student-displayddlerror"></span></td>
+        </tr>
+    </table>
+
+    <table id="student-displaydatatable">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone No</th>
+                <th>Course</th>
+                <th>Academic Year</th>
+                <th>Student ID</th>
+                <th colspan="2" class="student-action">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="11">Data Not found</td></tr>
+        </tbody>
+    </table>
+    
+
+
+
+</div>
+
+
+<%- include('commonfooter') %>

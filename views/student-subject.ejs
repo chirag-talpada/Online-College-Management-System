@@ -1,0 +1,50 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-subject').addClass('active-link');
+        $('.link-student-subject').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="student-subjectdiv" class="box-1">
+    <h3>Subject information</h3>
+    <table id="student-subject-table">
+        <tr>
+            <td>Semester :</td>
+            <td>
+                <input type="hidden" id="student-subject-course" value="<%= student.course %>">
+                <input type="hidden" id="student-subject-batch" value="<%= student.batch_year %>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="student-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            <td><button id="student-subject-dispbtn">display</button></td>
+        </tr>
+        <tr><td><span class="student-subject-error"></span></td></tr>
+    </table>
+
+
+    <table id="subject-displaydatatable" >
+        <thead>
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="2">Data Not found! Select Semester</td></tr>
+        </tbody>
+    </table>
+    
+
+</div>
+
+
+
+<%- include('common-student-footer') %>

@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial,sans-serif;
+    background-color: rgb(189, 183, 183);
+}
+
+#header-bar
+{
+    background-color: #202020;
+    color: white;
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    
+}
+
+#header-bar img {
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 6px;
+    left: 16px;
+    clear: both;
+}
+
+.cms-logo {
+    position: relative;
+    left: 21px;
+    opacity: 0.9;
+    clear: both;
+}
+
+.welcome-msg{
+    position: relative;
+    left: 335px;
+}
+
+#inner-header {
+    position: relative;
+    float: right;
+    top: 6px;
+    right: 29px;
+    clear: both;
+}
+
+
+#inner-header button{
+    color: white;
+    background:none;
+    border:none;
+    outline: none;
+    border:1px solid white;
+    padding: 5px;
+    border-radius: 9px;
+    font-weight: bolder;
+    width: 130px;
+}
+
+#inner-header button:hover{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#inner-header button:hover img{
+    display: none;
+}
+
+#inner-header button img{
+    position: relative;
+    top:0;
+    left: 15px;
+    height: 15px;
+    width: 15px;
+    display: inline;
+    float: left;
+}
+
+#navbar-div{
+       
+    background-color: #3a3838;
+    height: 713px;
+    width: 180px;
+    float: left;
+    margin-top: 40px;
+    position: fixed;
+    z-index: 1;
+    
+}
+
+#inner-navbar a{
+    text-decoration: none;
+    color: rgb(196, 191, 191);
+    display: block;
+    padding:12px 25px;
+}
+
+
+#inner-navbar li{
+    
+    border-bottom:3px solid #202020;
+}
+
+#inner-navbar a:hover{
+    color: white;
+    background-color:#2b2b2b;
+}
+
+#inner-navbar li.active-link a{
+    border-left:5px solid white;
+    background-color:#524f4f;
+    color: white;
+}
+
+#admin-content{
+    
+    margin-top:20px;
+    margin-left: 180px;   
+    min-height: 1000px;
+    width: 1337px;
+    float: left;
+    position: absolute;    
+    
+}  
+
+.box-1{
+    margin-bottom: 0px !important;
+    display: inline-block;
+    min-width: 1100px;
+}

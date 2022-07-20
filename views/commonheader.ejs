@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Management System</title>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/admin_ajax.js"></script>
+    <script src="/javascripts/admin-batch_year.js"></script>
+    <script src="/javascripts/admin-course.js"></script>
+    <script src="/javascripts/admin-subject.js"></script>
+    <script src="/javascripts/admin-student.js"></script>
+    <script src="/javascripts/admin-faculty.js"></script>
+    <script src="/javascripts/admin-assign_subject.js"></script>
+    <script src="/javascripts/admin-timetable.js"></script>
+    <script src="/javascripts/admin-notice.js"></script>
+    <script src="/javascripts/admin-event.js"></script>
+    <script src="/ckeditor/ckeditor.js"></script>
+
+    <link rel='stylesheet' href='/stylesheets/admincss.css' />
+    <link rel='stylesheet' href='/stylesheets/admin-profile.css' />
+    <link rel='stylesheet' href="/stylesheets/admin-batch_year.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-course.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-subject.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-student.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-faculty.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-assign_subject.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-timetable.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-notice.css"/>
+    <link rel='stylesheet' href="/stylesheets/admin-event.css"/>
+    
+
+</head>
+
+<body>
+    <div id="header-bar">
+        <img src="/images/book.png"><span class="cms-logo">CMS</span>
+        <span class="welcome-msg">Welcome , <%= username %> </span>
+        <div id="inner-header">
+            <form id="logoutfrm" method="POST" action="/admin/logout">
+                <button type="submit"><img src="/images/logout.png">Logout</button>
+            </form>
+        </div>
+    </div>
+    <div id="navbar-div">
+        <ul id="inner-navbar">
+            <li class="link-profile"><a href="/admin">Profile</a></li>
+            <li class="link-batch_year"><a href="/admin/batch_year">Batch Year </a></li>
+            <li class="link-course"><a href="/admin/course">Course </a></li>
+            <li class="link-subject"><a href="/admin/subject">Subject </a></li>
+            <li class="link-student"><a href="/admin/student">Student </a></li>
+            <li class="link-faculty"><a href="/admin/faculty">Faculty </a></li>
+            <li class="link-assign_subject"><a href="/admin/assign_subject">Assign Subject </a></li>
+            <li class="link-timetable"><a href="/admin/timetable">Timetable </a></li>
+            <li class="link-notice"><a href="/admin/notice">Notice </a></li>
+            <li class="link-event"><a href="/admin/event">Event </a></li>
+        </ul>
+
+    </div>
+
+    <div id="admin-content">

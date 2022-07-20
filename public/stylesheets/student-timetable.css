@@ -1,0 +1,35 @@
+#student-timetable-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    
+}
+
+#student-timetable-dispbtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    
+}
+#student-timetablediv{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 35px;
+}
+
+.student-timetable-error{
+    color: red;
+    display: none;
+}

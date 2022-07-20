@@ -1,0 +1,176 @@
+#admin-timetab-batchddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetab-courseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetab-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetabletab{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 1400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+#admin-timetabletab thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#admin-timetabletab th,
+#admin-timetabletab td{
+    padding: 12px 15px;
+}
+
+#admin-timetabletab tfoot tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+#admin-timetabletab tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#admin-timetabletab tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#admin-timetabletab tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+#admin-timetab-addrowbtn{
+    padding: 10px 30px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;   
+}
+
+#admin-timetable-rowtype{
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-right: 20px;      
+}
+
+#admin-timetab-deleterowbtn{
+    padding: 10px 30px;
+    background-color: rgb(185, 29, 29);
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;      
+}
+
+.timetabletxt{
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 15px;
+}
+
+#admin-timetab-savebtn{
+    padding: 10px 50px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;   
+    margin-top: 10px;   
+}
+
+.admin-timetaberror{
+    color: red;
+    display: none;
+}
+
+#admin-timetable-displayacademicyearddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetable-displaycourseddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetable-displaysemesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 10px;   
+}
+
+#admin-timetable-displaybtn{
+    padding: 10px 62px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.admin-timetable-displayddlerror{
+    color: red;
+    display: none;
+}
+
+.admin-timetable-deletebtn{
+    padding: 10px 30px;
+    background-color: rgb(185, 29, 29);
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;         
+}

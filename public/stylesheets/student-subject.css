@@ -1,0 +1,84 @@
+#student-subjectdiv{
+    border-top: 8px solid #3ea7f1;
+    background-color: white;
+    margin:15px;
+    position: relative;
+    top:20px;
+    padding: 15px;
+    border-radius: 5px;
+    padding-left: 35px;
+}
+
+#student-semesterddl{
+    width: 262px;
+    height: 40px;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    
+}
+
+#student-subject-dispbtn{
+    padding: 10px 54px;
+    background-color: #2874F0;
+    color:white;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 18px;
+    
+}
+
+#student-subject-table{
+    margin-top: 25px;
+    width: 500px;   
+}
+
+.student-subject-error{
+    color: red;
+    display: none;
+}
+
+#subject-displaydatatable{
+    border-collapse: collapse;
+    margin:25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    margin-top: 45px;
+}
+
+#subject-displaydatatable thead tr{
+    background-color: #36304a;
+    color:white;
+    text-align: center;
+    font-weight: bold;
+}
+
+#subject-displaydatatable th,
+#subject-displaydatatable td{
+    padding: 12px 15px;
+}
+
+
+#subject-displaydatatable tbody tr{
+    border-bottom: 2px solid #dddddd;
+    text-align: center;
+}
+
+#subject-displaydatatable tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+#subject-displaydatatable tbody tr:last-of-type{
+    border-bottom: 3px solid #36304a;
+}
+
+#student-subject-error{
+    color: red;
+    display: none;
+}

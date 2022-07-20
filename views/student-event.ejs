@@ -1,0 +1,47 @@
+<%- include('common-student-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-student-event').addClass('active-link');
+        $('.link-student-event').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<% if(event.length > 0) {%>
+    
+    <% event.forEach(function(row){ %>
+        <div id="event-div">
+            <h5><%= row.upload_date %></h5>            
+            <h3><span><%= row.event_name %></span></h3>
+            <div>
+                <div id="event-imgdiv">
+                <img src="/eventphotos/<%= row.imgurl %>" class="admin-event-newtabdisp" />
+                </div>
+                <div id="one">
+                    <h4 class="timehead">Start Timing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<%= row.start_time %></h4>
+                    <h4>End Timing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<%= row.end_time %></h4>
+                    <h4>Event Date &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<%= row.e_stringdate %></h4>
+                    <h4>Event Guide &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;<%= row.event_g %></h4>
+                </div>
+            </div>
+            <div id="noice-detail-div" >
+                <%= row.details %>
+            </div>
+
+        </div>
+    <% }) %>
+
+<%}else{%>
+    
+    <div id="notice-div">
+        <h3>There is no any Events!yet</h3>
+    </div>
+    
+<%}%>    
+
+
+
+
+
+<%- include('common-student-footer') %>

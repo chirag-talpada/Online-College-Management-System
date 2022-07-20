@@ -1,0 +1,205 @@
+<%- include('common-faculty-header') %>
+<script>
+    $(document).ready(function(){
+
+        $('.link-faculty-exam_marks').addClass('active-link');
+        $('.link-faculty-exam_marks').siblings().removeClass('active-link');
+        
+    });
+</script>
+
+<div id="faculty-exammarks-div" class="box-1">
+    <h3>Exam Marks Panel</h3>
+
+    <button id="faculty-exammarks-insertbtn">Insert Marks</button>
+    <button id="faculty-exammarks-editbtn">Edit Marks</button>
+
+
+</div>
+
+<div id="faculty-insertexammarks-div">
+    <h3>Insertion of Exam Marks</h3>
+
+    <table id="faculty-exammarks-table">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-exammarks-academicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            
+            <td>
+                <select id="faculty-exammarks-courseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="faculty-exammarks-semesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Subject Code :</td>
+            <td>Subject Name :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-exammarks-scodeddl">
+                    <option value=" " selected disabled>Select Subject Code</option>
+                </select>
+            </td>
+            <td><input type="text" id="faculty-exammarks-txtsname" class="faculty-textbox" placeholder="Subject Name" required readonly autocomplete="off"></td>
+            <td><input type="hidden" id="faculty-exammarks-fid" value="<%= fid %>"></td>
+        </tr>
+        <tr>
+            
+            <td><span class="faculty-exammarks-error"></span></td>
+        </tr>    
+    </table>
+    <hr>
+
+    <table id="faculty-exammarks-table">
+        <tbody class="faculty-exammarks-totalbody">
+        <tr>
+            <td>Toatl Marks :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="text" id="faculty-exammarks-txttotal" class="faculty-totaltextbox" placeholder="Enter Total Marks" required autocomplete="off"></td>
+            <td><span class="faculty-exammarks-txttotal-error">Invalid Marks</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table id="faculty-exammarks-displaydatatable">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Total Marks</th>
+                <th>Obtained Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="4">Select Subject </td></tr>
+        </tbody>
+    </table>
+
+    <input type="button" value="SAVE" id="faculty-exammarks-savebtn">
+
+
+
+</div>
+
+<div id="faculty-editexammarks-div">
+    <h3>Edit Exam Marks</h3>
+    <table id="faculty-exammarks-table">
+        <tr>
+            <td>Academic Year :</td>
+            <td>Course :</td>
+            <td>Semester :</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-exammarks-editacademicyearddl">
+                    <option value=" " selected disabled>select Academic Year</option>
+                    <% if(batch.length > 0 ){ %>
+                        <% batch.forEach(function(row){ %>
+
+                            <option value="<%= row.batch_year %>" ><%= row.batch_year %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>Academic Year not found</option>
+                    <% } %>
+                </select>
+            </td>
+            
+            <td>
+                <select id="faculty-exammarks-editcourseddl" >
+                    <option value=" " selected disabled >select course</option>
+                    <% if(course.length > 0 ){ %>
+                        <% course.forEach(function(row){ %>
+
+                            <option value="<%= row.course_name %>" ><%= row.course_name %></option>
+
+                        <% }) %>
+                    <%}else {%>
+                    <option value=" " disabled>course not found</option>
+                    <% } %>
+                </select>    
+            </td>
+            <td>
+                <select id="faculty-exammarks-editsemesterddl">
+                    <option value=" " selected disabled>select Semester</option>
+                </select>    
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Subject Code :</td>
+            <td>Subject Name :</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <select id="faculty-exammarks-editscodeddl">
+                    <option value=" " selected disabled>Select Subject Code</option>
+                </select>
+            </td>
+            <td><input type="text" id="faculty-exammarks-edittxtsname" class="faculty-textbox" placeholder="Subject Name" required readonly autocomplete="off"></td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td><span class="faculty-exammarks-editerror"></span></td>
+        </tr>    
+    </table>
+    <hr>
+    <button id="faculty-exammarks-deletebtn">Delete Exam Marks</button>
+    <table id="faculty-exammarks-editdisplaydatatable">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Student ID</th>
+                <th>Total Marks</th>
+                <th>Obtained Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="4">Select Subject </td></tr>
+        </tbody>
+    </table>
+
+    <input type="button" value="UPDATE" id="faculty-exammarks-editsavebtn">
+</div>
+
+
+
+<%- include('common-faculty-footer') %>
