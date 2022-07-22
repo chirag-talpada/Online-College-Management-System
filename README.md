@@ -31,7 +31,7 @@ npm start
 
 - Insert admin credentials in MongoDB database
 ```
-db.user.insertOne({username:"admin123",password:"admin123"})
+db.admins.insertOne({username:"admin123",password:"admin123"})
 ```
 
 # Note:
